@@ -10,6 +10,9 @@ var Percent = function(selector) {
     this.rating = false;
     this.marginLeft = this.container.offset().left;
 
+    this.red = '#ff3030';
+    this.green = '#76ee00';
+
 
     this.form.after(this.ratingInfo);
     this.setValue();
@@ -33,11 +36,11 @@ Percent.prototype.setValue = function () {
 
 Percent.prototype.checkColor = function (value) {
     if (value < 50) {
-        this.percent.css('backgroundColor', '#ff3030')
-        this.cursor.css('backgroundColor', '#ff3030')
+        this.percent.css('backgroundColor', this.red)
+        this.cursor.css('backgroundColor', this.red)
     } else {
-        this.percent.css('backgroundColor', '#76ee00');
-        this.cursor.css('backgroundColor', '#76ee00');
+        this.percent.css('backgroundColor', this.green);
+        this.cursor.css('backgroundColor', this.green);
     }
 };
 
@@ -76,8 +79,6 @@ Percent.prototype.submitRating = function (e) {
     e.preventDefault();
     $.post(this.form.attr('action'), this.form.serialize(), function(data) {
         this.form.hide();
-        console.log(data);
-        console.log(this.ratingInfo);
         this.ratingInfo.append(data);
     }.bind(this));
 };
@@ -88,9 +89,17 @@ Percent.prototype.rateAgain = function (e) {
     this.form.show();
 };
 
+Percent.prototype.changeRed = function (color) {
+    this.red = color;
+};
 
+Percent.prototype.changeGreen = function (color) {
+    this.green = color;
+};
+
+// INIT
 function rate(selector) {
-    var forms = $('.percent-form');
+    var forms = $(selector);
     var raters = [];
     for (let form of forms) {
         raters.push(new Percent(form));
