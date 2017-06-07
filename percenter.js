@@ -5,14 +5,13 @@ var Percent = function(selector) {
     this.cursor = this.form.find('.cursor');
     this.ratingInput = this.form.find('[name=rating]');
     this.ratingInfo = $('<span class="rating-info"></span>');
-    this.containerWidth = parseInt(this.container.css('width'));
 
+    this.containerWidth = parseInt(this.container.css('width'));
     this.rating = false;
     this.marginLeft = this.container.offset().left;
 
     this.red = '#ff3030';
     this.green = '#76ee00';
-
 
     this.form.after(this.ratingInfo);
     this.setValue();
@@ -36,11 +35,9 @@ Percent.prototype.setValue = function () {
 
 Percent.prototype.checkColor = function (value) {
     if (value < 50) {
-        this.percent.css('backgroundColor', this.red)
-        this.cursor.css('backgroundColor', this.red)
+        this.color(this.red);
     } else {
-        this.percent.css('backgroundColor', this.green);
-        this.cursor.css('backgroundColor', this.green);
+        this.color(this.green);
     }
 };
 
@@ -96,6 +93,13 @@ Percent.prototype.changeRed = function (color) {
 Percent.prototype.changeGreen = function (color) {
     this.green = color;
 };
+
+Percent.prototype.color = function (color) {
+    this.percent.css('backgroundColor', color);
+    this.cursor.css('backgroundColor', color);
+};
+
+
 
 // INIT
 function rate(selector) {
