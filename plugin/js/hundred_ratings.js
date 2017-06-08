@@ -1,4 +1,4 @@
-var Percent = function(selector) {
+var Hundred = function(selector) {
     this.form = $(selector);
     this.container = this.form.find('.hundred-percent');
     this.percent = this.form.find('.percent');
@@ -26,14 +26,14 @@ var Percent = function(selector) {
     this.ratingInfo.on('click', '.change-note a', this.rateAgain.bind(this));
 }
 
-Percent.prototype.setValue = function () {
+Hundred.prototype.setValue = function () {
     var value = parseInt(this.percent.css('width'));
     value = Math.round((value/this.containerWidth) * 100);
     this.checkColor(value);
     this.ratingInput.val(value);
 };
 
-Percent.prototype.checkColor = function (value) {
+Hundred.prototype.checkColor = function (value) {
     if (value < 50) {
         this.color(this.red);
     } else {
@@ -41,38 +41,38 @@ Percent.prototype.checkColor = function (value) {
     }
 };
 
-Percent.prototype.getPosition = function (e) {
+Hundred.prototype.getPosition = function (e) {
     var mouseX = e.clientX;
     return mouseX-this.marginLeft;
 };
 
-Percent.prototype.setWidth = function (e) {
+Hundred.prototype.setWidth = function (e) {
     var position = this.getPosition(e);
     if (position < 0) position = 0;
     if (position > this.containerWidth) position = this.containerWidth;
     this.percent.css('width', position+'px');
 };
 
-Percent.prototype.onMouseDown = function (e) {
+Hundred.prototype.onMouseDown = function (e) {
     this.rating = true;
     this.setWidth(e);
 };
 
-Percent.prototype.onMouseMove = function (e) {
+Hundred.prototype.onMouseMove = function (e) {
     if (this.rating) this.setWidth(e);
 };
 
-Percent.prototype.onMouseLeave = function (e) {
+Hundred.prototype.onMouseLeave = function (e) {
     if (this.rating) this.onMouseUp(e);
 };
 
-Percent.prototype.onMouseUp = function (e) {
+Hundred.prototype.onMouseUp = function (e) {
     this.rating = false;
     this.setWidth(e);
     this.setValue();
 };
 
-Percent.prototype.submitRating = function (e) {
+Hundred.prototype.submitRating = function (e) {
     e.preventDefault();
     $.post(this.form.attr('action'), this.form.serialize(), function(data) {
         this.form.hide();
@@ -80,21 +80,21 @@ Percent.prototype.submitRating = function (e) {
     }.bind(this));
 };
 
-Percent.prototype.rateAgain = function (e) {
+Hundred.prototype.rateAgain = function (e) {
     e.preventDefault();
     this.ratingInfo.html('');
     this.form.show();
 };
 
-Percent.prototype.setRed = function (color) {
+Hundred.prototype.setRed = function (color) {
     this.red = color;
 };
 
-Percent.prototype.setGreen = function (color) {
+Hundred.prototype.setGreen = function (color) {
     this.green = color;
 };
 
-Percent.prototype.color = function (color) {
+Hundred.prototype.color = function (color) {
     this.percent.css('backgroundColor', color);
     this.cursor.css('backgroundColor', color);
 };
@@ -109,7 +109,7 @@ var RatingSystem = function (selector) {
 RatingSystem.prototype.init = function (selector) {
     var forms = $(selector);
     for (let form of forms) {
-        this.ratings.push(new Percent(form));
+        this.ratings.push(new Hundred(form));
     }
 }
 
@@ -126,6 +126,6 @@ RatingSystem.prototype.setRed = function(color) {
 }
 
 $(function(){
-    var ratings = new RatingSystem('.percent-form');
+    var ratings = new RatingSystem('.hundred-form');
 
 });
