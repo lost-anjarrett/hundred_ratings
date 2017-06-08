@@ -86,11 +86,11 @@ Percent.prototype.rateAgain = function (e) {
     this.form.show();
 };
 
-Percent.prototype.changeRed = function (color) {
+Percent.prototype.setRed = function (color) {
     this.red = color;
 };
 
-Percent.prototype.changeGreen = function (color) {
+Percent.prototype.setGreen = function (color) {
     this.green = color;
 };
 
@@ -100,17 +100,32 @@ Percent.prototype.color = function (color) {
 };
 
 
+var RatingSystem = function (selector) {
+    this.ratings = [];
 
-// INIT
-function rate(selector) {
+    this.init(selector);
+};
+
+RatingSystem.prototype.init = function (selector) {
     var forms = $(selector);
-    var raters = [];
     for (let form of forms) {
-        raters.push(new Percent(form));
+        this.ratings.push(new Percent(form));
     }
-    return raters;
+}
+
+RatingSystem.prototype.setGreen = function (color) {
+    for (let rating of this.ratings) {
+        rating.setGreen(color);
+    }
+}
+
+RatingSystem.prototype.setRed = function(color) {
+    for (let rating of this.ratings) {
+        rating.setRed(color);
+    }
 }
 
 $(function(){
-    var raters = rate('.percent-form');
+    var ratings = new RatingSystem('.percent-form');
+
 });
