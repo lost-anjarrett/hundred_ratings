@@ -124,8 +124,3 @@ RatingSystem.prototype.setRed = function(color) {
         rating.setRed(color);
     }
 }
-
-$(function(){
-    var ratings = new RatingSystem('.hundred-form');
-
-});
