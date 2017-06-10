@@ -17,27 +17,27 @@
             </span>
         </span>Hundred Ratings</h1>
 
-        <p class="text-center border-bottom">An independant percent-rating System based on AJAX</p>
+        <p class="text-center border-bottom">An multi-instance percent-rating system based on AJAX</p>
 
         <div class="container page-content">
             <aside id="menu" class="">
                 <nav>
                     <ul>
-                        <li><a href="content/demo.html">Demo</a></li>
-                        <li><a href="content/start.html">Get started</a>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#start">Get started</a>
                             <ol>
-                                <li><a href="content/start.html">HTML</a></li>
-                                <li><a href="content/js.html">JavaScript</a></li>
-                                <li><a href="content/options.html">Options</a></li>
-                                <li><a href="content/more.html">More</a></li>
+                                <li><a href="#start">HTML</a></li>
+                                <li><a href="#js">JavaScript</a></li>
+                                <li><a href="#options">Options</a></li>
+                                <li><a href="#more">More</a></li>
                             </ol>
                         </li>
-                        <li><a href="content/about.html">About</a></li>
+                        <li><a href="#about">About</a></li>
                     </ul>
                 </nav>
             </aside>
             <div id="content"></div>
-            
+
         </div>
 
 

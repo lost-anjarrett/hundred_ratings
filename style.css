@@ -31,6 +31,7 @@ h1 {
 
 p {
     padding: 10px 0;
+    line-height: 1.5;
 }
 
 .container {
@@ -136,7 +137,7 @@ nav > ul > li > ol > li {
 }
 #content section {
     position: relative;
-    padding-bottom: 50px;
+    padding: 5px 15px 50px;
 }
 #heroes img {
     max-width: 65px;
