@@ -23,7 +23,7 @@ var Hundred = function(selector) {
 
     this.form.submit(this.submitRating.bind(this));
 
-    this.ratingInfo.on('click', '.change-note a', this.rateAgain.bind(this));
+    this.ratingInfo.on('click', '.change-rating a', this.rateAgain.bind(this));
 }
 
 Hundred.prototype.setValue = function () {
@@ -74,11 +74,17 @@ Hundred.prototype.onMouseUp = function (e) {
 
 Hundred.prototype.submitRating = function (e) {
     e.preventDefault();
-    $.post(this.form.attr('action'), this.form.serialize(), function(data) {
-        this.form.hide();
-        this.ratingInfo.append(data);
-    }.bind(this));
+    $.post(this.form.attr('action'), this.form.serialize(), this.callback.bind(this));
 };
+
+Hundred.prototype.callback = function (data) {
+    this.form.hide();
+    this.ratingInfo.append(data);
+}
+
+Hundred.prototype.setCallback = function (callback) {
+    this.callback = callback;
+}
 
 Hundred.prototype.rateAgain = function (e) {
     e.preventDefault();
@@ -98,6 +104,10 @@ Hundred.prototype.color = function (color) {
     this.percent.css('backgroundColor', color);
     this.cursor.css('backgroundColor', color);
 };
+
+
+
+
 
 
 var RatingSystem = function (selector) {
@@ -122,5 +132,11 @@ RatingSystem.prototype.setGreen = function (color) {
 RatingSystem.prototype.setRed = function(color) {
     for (let rating of this.ratings) {
         rating.setRed(color);
+    }
+}
+
+RatingSystem.prototype.setCallback = function(callback) {
+    for (let rating of this.ratings) {
+        rating.setCallback(callback);
     }
 }

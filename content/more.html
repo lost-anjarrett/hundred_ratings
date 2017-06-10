@@ -1,5 +1,15 @@
 <section class="text-center">
     <h3>More</h3>
+    <p>This the PHP response to the AJAX request</p>
+    <div class="">
+        <textarea class="code" rows="5" cols="70">
+<?php if (isset($_POST['rating'])) : ?>
+    Your rating : <?= $_POST['rating'] ?>%
+        <span class="change-rating"><a href="#">Change ?</a></span>
+<?php endif; ?>
+        </textarea>
+    </div>
+    <p>If you change it, rate-again function may not work anymore <br>unless you keep the same structure...</p>
     <p>You can also use this plugin as a base to realtime setting, but you'll have to adapt it by your own...<br>Good luck !</p>
     <p>If you want to know about me : <a href="#about">here</a></p>
     <div class="clearfix pagination">

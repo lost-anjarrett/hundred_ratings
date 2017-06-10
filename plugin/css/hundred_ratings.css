@@ -44,7 +44,7 @@
     display:block;
 }
 
-.change-note {
+.change-rating {
     border: 1px solid #adadad;
     background-color: white;
     display: none;
@@ -54,7 +54,7 @@
     right: 0px;
 }
 
-.change-note a {
+.change-rating a {
     font-size: 0.8rem;
     text-decoration: none;
 }
