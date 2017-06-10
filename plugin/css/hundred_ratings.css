@@ -40,7 +40,7 @@
     position: relative;
 }
 
-.rating-info:hover .change-note {
+.rating-info:hover .change-rating {
     display:block;
 }
 

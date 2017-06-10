@@ -1,8 +1,10 @@
+/***************GLOBALS***************/
+
 * {
     box-sizing: border-box;
 }
 
-html  {
+html, header a  {
     color: #fff;
     background: #20b2aa;
     font-family: 'Arimo', sans-serif;
@@ -25,14 +27,19 @@ a:hover {
 }
 
 h1 {
-    padding: 20px;
-    text-transform: uppercase;
+    padding: 50px;
 }
 
 p {
     padding: 10px 0;
     line-height: 1.5;
 }
+
+section {
+    margin: 5px;
+}
+
+/***************HELPERS***************/
 
 .container {
     max-width: 1155px;
@@ -48,16 +55,38 @@ p {
     border-bottom: 1px solid #fff;
 }
 
-section {
-    margin: 5px;
+.active {
+    color: #fff;
+    background: #76a915;
 }
 
+.code {
+    resize: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+/****************LOGO****************/
+
 .logo {
+    display: inline-block;
     padding: 4px;
+    margin: 25px auto;
     border: 3px solid #fff;
     border-radius: 25px;
     background: #20b2aa;
-    margin: 12px;
 }
 
 .logo-inner {
@@ -67,15 +96,6 @@ section {
     color: #285B00;
     border: 1px solid #20b2aa;
     border-radius: 25px;
-}
-
-.page-content {
-    color: #7a8984;
-    background: #fff;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
 }
 
 .logo-1x, .logo-2x, .logo-3x {
@@ -93,14 +113,14 @@ section {
 .logo-3x {
     font-size: 1.75rem;
 }
-#menu {
-    display: inline-block;
-    width: 22%;
-    border-right: 4px solid #76a915;
-}
+
+/***************MENU***************/
 
 #menu {
     color: #76a915;
+    display: inline-block;
+    width: 22%;
+    border-right: 4px solid #76a915;
 }
 
 nav a {
@@ -125,12 +145,18 @@ nav > ul > li > ol > li {
 
 }
 
-.active {
-    color: #fff;
-    background: #76a915;
+/***************CONTENT***************/
+
+.page-content {
+    background: #fff;
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
 }
 
 #content {
+    color: #7a8984;
     display: inline-flex;
     justify-content: space-around;
     width: 76%;
@@ -139,48 +165,22 @@ nav > ul > li > ol > li {
     position: relative;
     padding: 5px 15px 50px;
 }
-#heroes img {
-    max-width: 65px;
-}
-#heroes form {
+
+.example form {
     display: inline-block;
 }
-#heroes > div {
+.example > div {
     padding: 5px;
 }
 
-#heroes > div + div {
+.example > div + div {
     border-top: 1px solid #7a8984;
 }
 
-#guess {
-    text-align: center;
+.example .bad .percent {
+    width: 20px;
 }
 
-#guess img {
-    margin: 35px auto 15px;
-    max-width: 195px;
-    display: block;
-}
-
-.code {
-    resize: none;
-    font-family: "Lucida Console", monospace;
-}
-
-.next, .prev {
-    display: inline-block;
-    margin: 8px;
-}
-.prev {
-    float: left;
-}
-.next {
-    float: right;
-}
-.clearfix {
-    clear: both;
-}
 .pagination {
     width: 100%;
     position: absolute;

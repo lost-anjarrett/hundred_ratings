@@ -1,18 +1,22 @@
 <section>
     <h3 class="text-center">Javascript</h3>
 
-    <p>This plugin needs the JQuery Library, latest CDN version  <a href="https://cdnjs.com/libraries/jquery">here</a>.<br>
-        Add this script at the end of your page.
+    <p>This plugin needs the JQuery Library. Latest CDN version  <a href="https://cdnjs.com/libraries/jquery">here</a>.<br>
+        Add these scripts at the end of your page.
     </p>
     <div class="">
-        <textarea class="code" rows="4" cols="60">
-$(function(){
-    var ratings = new RatingSystem('.hundred-form');
-};
+        <textarea class="code" rows="9" cols="70">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="hundred_ratings.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var ratings = new RatingSystem('.hundred-form');
+    };
+</script>
         </textarea>
     </div>
     <div class="clearfix pagination">
-        <a href="#start" class="prev"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a>
-        <a href="#options" class="next"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
+        <a href="#start" class="left"><i class="fa fa-arrow-circle-left fa-2x" aria-hidden="true"></i></a>
+        <a href="#options" class="right"><i class="fa fa-arrow-circle-right fa-2x" aria-hidden="true"></i></a>
     </div>
 </section>
