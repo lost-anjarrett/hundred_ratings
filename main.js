@@ -30,10 +30,14 @@ $(function(){
         window.location.hash = updateAnchor(source);
         // Affichage dans la div#corps
         updateContent(source);
+        $(this).blur();
     });
 
     // Chargement du contenu en fonction de l'ancre
     updateContent('content/' + hashLocation + '.html');
 
-    console.log('guich');
+    $('#content').on('click', '.next', function(e) {
+        console.log('gjsdlkj');
+    })
+
 });

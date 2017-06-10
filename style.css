@@ -15,7 +15,7 @@ ul {
 
 a {
     text-decoration: none;
-    color: #76a915;
+    color: #20b2aa;
 }
 
 a:hover {
@@ -30,7 +30,7 @@ h1 {
 }
 
 p {
-    padding: 10px;
+    padding: 10px 0;
 }
 
 .container {
@@ -47,10 +47,8 @@ p {
     border-bottom: 1px solid #fff;
 }
 
-.example {
+section {
     margin: 5px;
-    color: #20b2aa;
-    background: #fff;
 }
 
 .logo {
@@ -71,6 +69,7 @@ p {
 }
 
 .page-content {
+    color: #7a8984;
     background: #fff;
     padding: 15px 0;
     display: flex;
@@ -95,7 +94,7 @@ p {
 }
 #menu {
     display: inline-block;
-    width: 25%;
+    width: 22%;
     border-right: 4px solid #76a915;
 }
 
@@ -103,11 +102,12 @@ p {
     color: #76a915;
 }
 
-#menu a {
+nav a {
     display: inline-block;
     padding: 5px 0 5px 30px;
     width: 100%;
     border-radius: 15px 0px 0px 15px;
+    color: #76a915;
 }
 
 nav > ul > li {
@@ -124,7 +124,6 @@ nav > ul > li > ol > li {
 
 }
 
-
 .active {
     color: #fff;
     background: #76a915;
@@ -133,5 +132,57 @@ nav > ul > li > ol > li {
 #content {
     display: inline-flex;
     justify-content: space-around;
-    width: 73%;
+    width: 76%;
+}
+#content section {
+    position: relative;
+    padding-bottom: 50px;
+}
+#heroes img {
+    max-width: 65px;
+}
+#heroes form {
+    display: inline-block;
+}
+#heroes > div {
+    padding: 5px;
+}
+
+#heroes > div + div {
+    border-top: 1px solid #7a8984;
+}
+
+#guess {
+    text-align: center;
+}
+
+#guess img {
+    margin: 35px auto 15px;
+    max-width: 195px;
+    display: block;
+}
+
+.code {
+    resize: none;
+    font-family: "Lucida Console", monospace;
+}
+
+.next, .prev {
+    display: inline-block;
+    margin: 8px;
+}
+.prev {
+    float: left;
+}
+.next {
+    float: right;
+}
+.clearfix {
+    clear: both;
+}
+.pagination {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
