@@ -14,7 +14,7 @@ var Hundred = function(selector) {
     this.green = '#76ee00';
 
     this.form.after(this.ratingInfo);
-    this.setValue();
+    this.setFirstValue();
 
     this.container.mousedown(this.onMouseDown.bind(this));
     this.container.mousemove(this.onMouseMove.bind(this));
@@ -25,6 +25,12 @@ var Hundred = function(selector) {
 
     this.ratingInfo.on('click', '.change-rating a', this.rateAgain.bind(this));
 }
+
+Hundred.prototype.setFirstValue = function () {
+    var val = this.ratingInput.val();
+    if (val !== '') this.percent.css('width', (val*this.containerWidth/100)+'px');
+    this.setValue();
+};
 
 Hundred.prototype.setValue = function () {
     var value = parseInt(this.percent.css('width'));
